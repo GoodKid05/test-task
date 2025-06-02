@@ -57,4 +57,17 @@ function create_contact_form_table() {
 }
 
 add_action('after_setup_theme', 'create_contact_form_table');
+
+add_action('phpmailer_init', function($phpmailer) {
+	$phpmailer->isSMTP();
+	$phpmailer->Host = 'smtp.yandex.ru';
+	$phpmailer->SMTPAuth = true;
+	$phpmailer->Port = 465;
+	$phpmailer->Username = 'rbru-metrika@yandex.ru';
+	$phpmailer->Password = 'Введите пароль приложения';
+	$phpmailer->SMTPSecure = 'ssl';
+	$phpmailer->From = 'rbru-metrika@yandex.ru';
+	$phpmailer->FromName = 'Rocket Business';
+});
+
 ?>
