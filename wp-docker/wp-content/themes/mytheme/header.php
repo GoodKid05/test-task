@@ -12,5 +12,8 @@
 	<header class="header"> 
 		<div class="header-content-container">
 			<h1 class="header-logo">Header Logo</h1>
+			<div class="header-contact-container">  
+				<a href="/contact">Обратная связь</a>
+			</div>
 		</div>
 	</header>
