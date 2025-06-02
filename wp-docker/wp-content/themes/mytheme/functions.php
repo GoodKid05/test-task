@@ -18,6 +18,7 @@ function my_custom_post_types() {
 		'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
 		'show_in_rest' => true
 	]);
+
 	register_post_type('service', [
 		'labels' => [
 			'name' => 'Услуги',
@@ -38,4 +39,22 @@ function mytheme_setup() {
 }
 
 add_action('after_setup_theme', 'mytheme_setup');
+
+
+function create_contact_form_table() {
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'contact_form_submissions';
+	$charset_collate = $wpdb->get_charset_collate();
+	$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+		id mediumint(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		name TEXT NOT NULL,
+		email TEXT NOT NULL,
+		message TEXT NOT NULL,
+		created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL
+	) $charset_collate;";
+	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+	dbDelta($sql);
+}
+
+add_action('after_setup_theme', 'create_contact_form_table');
 ?>
