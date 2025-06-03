@@ -496,6 +496,7 @@ h1, h2, h3, h4 {
 
 .service-description-title-container {
 	font-size: 2.2rem;
+	font-family: "Inter", sans-serif;
 	padding-bottom: 2rem;
 	border-bottom: 1px solid #1e1e1e;
 }
@@ -503,6 +504,7 @@ h1, h2, h3, h4 {
 .service-description {
 	text-align: justify;
 	font-size: 2rem;
+	font-family: "Inter", sans-serif;
 }
 
 .service-image-container {
@@ -603,10 +605,10 @@ h1, h2, h3, h4 {
 	.articles-cards-container {
 		display: flex;
 		flex-direction: column;
-		gap: 13px;
+		gap: 2rem;
 		height: 100%;
 		width: 100%;
-		align-items: center;
+		/* align-items: center; */
 	}
 
 	.articles-title {
@@ -615,10 +617,15 @@ h1, h2, h3, h4 {
 		letter-spacing: 0.02em;
 	}
 
+	.article-card-title-link a {
+		font-size: 1.6rem;
+	}
+
 	.article-card {
 		width: 100%;
-		max-width: 31.2rem;
+		min-width: 31.2rem;
 		height: 34.8rem;
+		flex-grow: 1;
 	}
 
 	.article-card-container-img {

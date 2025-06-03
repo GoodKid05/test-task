@@ -21,7 +21,7 @@ if (window.innerWidth < 1440 && !swiperInstance) {
 					loop: true
 				}
 			},
-			361: {
+			420: {
 				pagination: {
 					enabled: false 
 				},
